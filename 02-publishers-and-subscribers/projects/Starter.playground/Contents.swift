@@ -2,6 +2,9 @@ import Foundation
 import Combine
 import _Concurrency
 
+// Create a subscriptions set.
+var subscriptions = Set<AnyCancellable>()
+
 example(of: "Publisher") {
     // Create Notification Name
     let myNotification = Notification.Name("MyNotification")
@@ -298,9 +301,6 @@ example(of: "Dynamically adjusting Demand") {
 
 // There will be times when you want to let subscribers subscribe to receive events from a publisher without being able to access additional details about that publisher.
 example(of: "Type erasure") {
-    // Create a subscriptions set.
-    var subscriptions = Set<AnyCancellable>()
-
     // Create a passthrough subject.
     let subject = PassthroughSubject<Int, Never>()
 
