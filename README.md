@@ -1,13 +1,18 @@
 # Combine: Asynchronous Programming with Swift: Materials
 
-This repo contains all the downloadable materials and projects associated with the **[Combine: Asynchronous Programming with Swift](https://www.raywenderlich.com/books/combine-asynchronous-programming-with-swift)** from [raywenderlich.com](https://www.raywenderlich.com).
+https://www.raywenderlich.com/books/combine-asynchronous-programming-with-swift
 
-Each edition has its own branch, named `editions/[EDITION]`. The default branch for this repo is for the most recent edition.
+# Key Points - Publishers and Subscribers
 
-## Release History
+- Publishers transmit a sequence of values over time to one or more subscribers, either synchronously or asynchronously.
+- A subscriber can subscribe to a publisher to receive values; however, the subscriber’s input and failure types must match the publisher’s output and failure types.
+- There are two built-in operators you can use to subscribe to publishers: sink(_:_:) and assign(to:on:).
+- A subscriber may increase the demand for values each time it receives a value, but it cannot decrease demand.
+- To free up resources and prevent unwanted side effects, cancel each subscription when you’re done.
+- You can also store a subscription in an instance or collection of AnyCancellable to receive automatic cancelation upon deinitialization.
+- You use a future to receive a single value asynchronously at a later time.
+- Subjects are publishers that enable outside callers to send multiple values asynchronously to subscribers, with or without a starting value.
+- Type erasure prevents callers from being able to access additional details of the underlying type.
+- Use the print() operator to log all publishing events to the console and see what’s going on.
 
-| Branch                                                                            | Edition | Release Date |
-| --------------------------------------------------------------------------------- |:-------:|:------------:|
-| [editions/3.0](https://github.com/raywenderlich/comb-materials/tree/editions/3.0) | 3.0     | 2021-09-29   |
-| [editions/2.0](https://github.com/raywenderlich/comb-materials/tree/editions/2.0) | 2.0     | 2020-10-15   |
-| [editions/1.0](https://github.com/raywenderlich/comb-materials/tree/editions/1.0) | 1.0     | 2020-02-17   |
+
