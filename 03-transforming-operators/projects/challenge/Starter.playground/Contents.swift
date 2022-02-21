@@ -56,7 +56,7 @@ example(of: "Create a phone number lookup") {
         return "Dialing \(contact) (\(phoneNumber))..."
     }
     
-    let input = PassthroughSubject<String, Never>()
+    let input =  PassthroughSubject<String, Never>()
     
     input
         .map(convert) // Convert the input to numbers
